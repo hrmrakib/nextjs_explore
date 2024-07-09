@@ -56,6 +56,9 @@ const Navbar = () => {
           <Link href='/dashboard'>Dashboard</Link>
         </li>
         <li>
+          <Link href='/blog'>Blog</Link>
+        </li>
+        <li>
           <button onClick={() => router.push("/login")}>Login</button>
         </li>
       </ul>
