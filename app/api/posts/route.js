@@ -7,9 +7,10 @@ export const GET = async () => {
   });
 };
 
-export const POST = async () => {
-  
+export const POST = async (req) => {
+  const data = await req.json();
   return Response.json({
-    "post method of posts"
+    text: data,
+    name: "post method of posts",
   });
 };

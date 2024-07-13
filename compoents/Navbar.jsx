@@ -1,4 +1,5 @@
 "use client";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
@@ -6,6 +7,8 @@ import React from "react";
 const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
+  const session = useSession();
+  console.log({ session });
 
   if (pathname.includes("dashboard")) {
     return <div>Dashboard</div>;

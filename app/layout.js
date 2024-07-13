@@ -1,14 +1,9 @@
-import { Inter, Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "./compoents/Navbar";
+import Navbar from "@/compoents/Navbar";
+import AuthProvider from "./AuthProvider/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
-// const roboto = Roboto(
-//   {
-//     weight: ["300", "400", "500", "800", "900"],
-//   },
-//   { subsets: ["latin"] }
-// );
 
 export const metadata = {
   default: "nexjs",
@@ -19,8 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <Navbar />
-        {children}
+        <AuthProvider>
+          <Navbar />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
